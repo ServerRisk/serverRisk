@@ -71,8 +71,13 @@
 
                         <div class="form-group row">
                             <label for="captchaBox" class="col-md-4 col-form-label text-md-right">Fill the captcha</label>
-                            <div class="col-md-2">
-                                <input type="text" id="captchaBox" name="captcha">
+                            <div class="col-md-6">
+                                <input class="form-control @error('captcha') is-invalid @enderror" type="text" id="captchaBox" name="captcha">
+                                @error('captcha')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>Captcha Failed</strong>
+                                    </span>
+                                @enderror
                             </div>
                         </div>
 
